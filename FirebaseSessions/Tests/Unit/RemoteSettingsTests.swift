@@ -13,8 +13,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import XCTest
 @testable import FirebaseSessions
+import XCTest
 
 class RemoteSettingsTests: XCTestCase {
   // 2021-11-01 @ 00:00:00 (EST)
@@ -25,7 +25,7 @@ class RemoteSettingsTests: XCTestCase {
       "sessions_enabled": false,
       "sampling_rate": 0.5,
       "session_timeout_seconds": 10,
-    ],
+    ] as [String: Any],
   ]
   let validSettings2: [String: Any] = [
     "cache_duration": 20,
@@ -33,7 +33,7 @@ class RemoteSettingsTests: XCTestCase {
       "sessions_enabled": true,
       "sampling_rate": 0.2,
       "session_timeout_seconds": 20,
-    ],
+    ] as [String: Any],
   ]
   let corruptedJSONString: String = "{{{{ non_key: non\"value {}"
   var cache: SettingsCacheClient!

@@ -12,10 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import Foundation
 import Combine
-import XCTest
 import FirebaseAuth
+import Foundation
+import XCTest
 
 class SignInWithGameCenterTests: XCTestCase {
   override class func setUp() {
@@ -69,7 +69,7 @@ class SignInWithGameCenterTests: XCTestCase {
     var contentType: String?
     var handler: FIRAuthBackendRPCIssuerCompletionHandler?
 
-    func asyncPostToURL(with requestConfiguration: FIRAuthRequestConfiguration, url URL: URL,
+    func asyncCallToURL(with requestConfiguration: FIRAuthRequestConfiguration, url URL: URL,
                         body: Data?, contentType: String,
                         completionHandler handler: @escaping FIRAuthBackendRPCIssuerCompletionHandler) {
       requestURL = URL

@@ -1,3 +1,29 @@
+# 10.19.0
+- [fixed] Made an optimization to the synchronization logic for resumed queries
+  to only re-download locally-cached documents that are known to be out-of-sync. (#12044)
+
+# 10.18.0
+- [fixed] Fix Firestore build for visionOS on Xcode 15.1. (#12023)
+
+# 10.17.0
+- [feature] Add support for sum and average aggregate queries.
+- [feature] The `FirebaseFirestore` module now contains Firebase Firestore's
+  Swift-only APIs that were previously only available via the
+  `FirebaseFirestoreSwift` extension SDK. See the
+  `FirebaseFirestoreSwift` release note from this release for more details.
+
+# 10.16.0
+- [fixed] Fixed an issue where Firestore's binary SwiftPM distribution would
+  not link properly when building a target for testing. This issue affected
+  Xcode 15 Beta 5 and later (#11656).
+- [fixed] Downgrade the CocoaPods grpc dependency back to 1.44.0 (from 1.50.1)
+  to fix a crash on iOS 12 devices that was introduced in the Firebase Apple SDK
+  10.10.0 when the grpc dependency was upgraded (#11509).
+
+# 10.15.0
+- [feature] Add the option to allow the SDK to create cache indexes automatically to
+  improve query execution locally. (#11596)
+
 # 10.12.0
 - [feature] Implemented an optimization in the local cache synchronization logic
   that reduces the number of billed document reads when documents were deleted
